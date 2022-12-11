@@ -5,3 +5,5 @@ Paredit performs structured editing of Lisp S-expressions in Vim. Paredit.vim is
 Paredit.vim is also part of the Slimv plugin (http://www.vim.org/scripts/script.php?script_id=2531). Slimv is a SWANK client for Vim, similarly to SLIME for Emacs. Paredit.vim is extracted from Slimv for users who want to use a different SWANK client or don't need a SWANK client at all. In case you need structured editing together with the SWANK functionality then please install Slimv instead, you don't need to additionally install Paredit.
 
 For more information see the included documentation.
+
+This script has been modified so that short map 'O' is now mapped to 'E'
