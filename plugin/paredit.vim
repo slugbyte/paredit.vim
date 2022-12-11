@@ -165,7 +165,7 @@ function! PareditInitBuffer()
             " Shorter keymaps: old functionality of KEY is remapped to <Leader>KEY
             call RepeatableNNoRemap('<', ':<C-U>call PareditMoveLeft()') 
             call RepeatableNNoRemap('>', ':<C-U>call PareditMoveRight()') 
-            call RepeatableNNoRemap('O', ':<C-U>call PareditSplit()') 
+            call RepeatableNNoRemap('E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap('J', ':<C-U>call PareditJoin()') 
             call RepeatableNNoRemap('W', ':<C-U>call PareditWrap("(",")")') 
             vnoremap <buffer> <silent> W            :<C-U>call PareditWrapSelection('(',')')<CR>
@@ -182,7 +182,7 @@ function! PareditInitBuffer()
             nnoremap <buffer> <silent> S            V:<C-U>call PareditChange(visualmode(),1)<CR>
             call RepeatableNNoRemap(g:paredit_leader . '<', ':<C-U>call PareditMoveLeft()') 
             call RepeatableNNoRemap(g:paredit_leader . '>', ':<C-U>call PareditMoveRight()') 
-            call RepeatableNNoRemap(g:paredit_leader . 'O', ':<C-U>call PareditSplit()') 
+            call RepeatableNNoRemap(g:paredit_leader . 'E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap(g:paredit_leader . 'J', ':<C-U>call PareditJoin()') 
             call RepeatableNNoRemap(g:paredit_leader . 'W', ':<C-U>call PareditWrap("(",")")') 
             execute 'vnoremap <buffer> <silent> ' . g:paredit_leader.'W  :<C-U>call PareditWrapSelection("(",")")<CR>'
