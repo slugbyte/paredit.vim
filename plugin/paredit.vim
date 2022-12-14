@@ -126,7 +126,7 @@ function! PareditInitBuffer()
         call RepeatableNNoRemap('X', ':<C-U>call PareditEraseBck()')
         nnoremap <buffer> <silent> s            :<C-U>call PareditEraseFwd()<CR>i
         call RepeatableNNoRemap('D', 'v$:<C-U>call PareditDelete(visualmode(),1)')
-        nnoremap <buffer> <silent> C            v$:<C-U>call PareditChange(visualmode(),1)<CR>
+   
         nnoremap <buffer> <silent> d            :<C-U>call PareditSetDelete(v:count)<CR>g@
         vnoremap <buffer> <silent> d            :<C-U>call PareditDelete(visualmode(),1)<CR>
         vnoremap <buffer> <silent> x            :<C-U>call PareditDelete(visualmode(),1)<CR>
