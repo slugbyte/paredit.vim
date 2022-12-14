@@ -131,15 +131,7 @@ function! PareditInitBuffer()
         vnoremap <buffer> <silent> d            :<C-U>call PareditDelete(visualmode(),1)<CR>
         vnoremap <buffer> <silent> x            :<C-U>call PareditDelete(visualmode(),1)<CR>
         vnoremap <buffer> <silent> <Del>        :<C-U>call PareditDelete(visualmode(),1)<CR>
-        nnoremap <buffer> <silent> c            :set opfunc=PareditChange<CR>g@
-        vnoremap <buffer> <silent> c            :<C-U>call PareditChange(visualmode(),1)<CR>
         call RepeatableNNoRemap('dd', ':<C-U>call PareditDeleteLines()')
-        nnoremap <buffer> <silent> cc           :<C-U>call PareditChangeLines()<CR>
-        nnoremap <buffer> <silent> cw           :<C-U>call PareditChangeSpec('cw',1)<CR>
-        nnoremap <buffer> <silent> cW           :set opfunc=PareditChange<CR>g@E
-        nnoremap <buffer> <silent> cb           :<C-U>call PareditChangeSpec('cb',0)<CR>
-        nnoremap <buffer> <silent> ciw          :<C-U>call PareditChangeSpec('ciw',1)<CR>
-        nnoremap <buffer> <silent> caw          :<C-U>call PareditChangeSpec('caw',1)<CR>
         call RepeatableNNoRemap('p', ':<C-U>call PareditPut("p")')
         call RepeatableNNoRemap('P', ':<C-U>call PareditPut("P")')
         call RepeatableNNoRemap(g:paredit_leader . 'w(', ':<C-U>call PareditWrap("(",")")')
@@ -168,7 +160,7 @@ function! PareditInitBuffer()
             call RepeatableNNoRemap('E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap('J', ':<C-U>call PareditJoin()') 
             call RepeatableNNoRemap('W', ':<C-U>call PareditWrap("(",")")') 
-            vnoremap <buffer> <silent> W            :<C-U>call PareditWrapSelection('(',')')<CR>
+            vnoremap <buffer> <silent> A  :<C-U>call PareditWrapSelection('(',')')<CR>
             call RepeatableNNoRemap('S', ':<C-U>call PareditSplice()') 
             execute 'nnoremap <buffer> <silent> ' . g:paredit_leader.'<  :<C-U>normal! <<CR>'
             execute 'nnoremap <buffer> <silent> ' . g:paredit_leader.'>  :<C-U>normal! ><CR>'
@@ -184,7 +176,7 @@ function! PareditInitBuffer()
             call RepeatableNNoRemap(g:paredit_leader . '>', ':<C-U>call PareditMoveRight()') 
             call RepeatableNNoRemap(g:paredit_leader . 'E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap(g:paredit_leader . 'J', ':<C-U>call PareditJoin()') 
-            call RepeatableNNoRemap(g:paredit_leader . 'W', ':<C-U>call PareditWrap("(",")")') 
+            call RepeatableNNoRemap(g:paredit_leader . 'A', ':<C-U>call PareditWrap("(",")")') 
             execute 'vnoremap <buffer> <silent> ' . g:paredit_leader.'W  :<C-U>call PareditWrapSelection("(",")")<CR>'
             call RepeatableNNoRemap(g:paredit_leader . 'S', ':<C-U>call PareditSplice()') 
         endif
@@ -209,16 +201,9 @@ function! PareditInitBuffer()
         silent! unmap  <buffer> X
         silent! unmap  <buffer> s
         silent! unmap  <buffer> D
-        silent! unmap  <buffer> C
         silent! unmap  <buffer> d
-        silent! unmap  <buffer> c
         silent! unmap  <buffer> dd
-        silent! unmap  <buffer> cc
-        silent! unmap  <buffer> cw
-        silent! unmap  <buffer> cW
-        silent! unmap  <buffer> cb
-        silent! unmap  <buffer> ciw
-        silent! unmap  <buffer> caw
+
         if &ft =~ '.*\(clojure\|scheme\|racket\).*'
             silent! iunmap <buffer> [
             silent! iunmap <buffer> ]
