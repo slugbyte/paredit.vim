@@ -176,7 +176,7 @@ function! PareditInitBuffer()
             call RepeatableNNoRemap(g:paredit_leader . '>', ':<C-U>call PareditMoveRight()') 
             call RepeatableNNoRemap(g:paredit_leader . 'E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap(g:paredit_leader . 'J', ':<C-U>call PareditJoin()') 
-            call RepeatableNNoRemap(g:paredit_leader . 'G', ':<C-U>call PareditWrap("(",")")') 
+            call RepeatableNNoRemap(g:paredit_leader . '=', ':<C-U>call PareditWrap("(",")")') 
             execute 'vnoremap <buffer> <silent> ' . g:paredit_leader.'W  :<C-U>call PareditWrapSelection("(",")")<CR>'
             call RepeatableNNoRemap(g:paredit_leader . 'S', ':<C-U>call PareditSplice()') 
         endif
