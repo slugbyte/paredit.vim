@@ -160,7 +160,7 @@ function! PareditInitBuffer()
             call RepeatableNNoRemap('E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap('J', ':<C-U>call PareditJoin()') 
             call RepeatableNNoRemap('W', ':<C-U>call PareditWrap("(",")")') 
-            vnoremap <buffer> <silent> A  :<C-U>call PareditWrapSelection('(',')')<CR>
+            vnoremap <buffer> <silent> G  :<C-U>call PareditWrapSelection('(',')')<CR>
             call RepeatableNNoRemap('S', ':<C-U>call PareditSplice()') 
             execute 'nnoremap <buffer> <silent> ' . g:paredit_leader.'<  :<C-U>normal! <<CR>'
             execute 'nnoremap <buffer> <silent> ' . g:paredit_leader.'>  :<C-U>normal! ><CR>'
@@ -176,7 +176,7 @@ function! PareditInitBuffer()
             call RepeatableNNoRemap(g:paredit_leader . '>', ':<C-U>call PareditMoveRight()') 
             call RepeatableNNoRemap(g:paredit_leader . 'E', ':<C-U>call PareditSplit()') 
             call RepeatableNNoRemap(g:paredit_leader . 'J', ':<C-U>call PareditJoin()') 
-            call RepeatableNNoRemap(g:paredit_leader . 'A', ':<C-U>call PareditWrap("(",")")') 
+            call RepeatableNNoRemap(g:paredit_leader . 'G', ':<C-U>call PareditWrap("(",")")') 
             execute 'vnoremap <buffer> <silent> ' . g:paredit_leader.'W  :<C-U>call PareditWrapSelection("(",")")<CR>'
             call RepeatableNNoRemap(g:paredit_leader . 'S', ':<C-U>call PareditSplice()') 
         endif
