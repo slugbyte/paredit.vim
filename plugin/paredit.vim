@@ -268,7 +268,7 @@ function! PareditOpfunc( func, type, visualmode )
     if !g:paredit_mode || (a:visualmode && (a:type == 'block' || a:type == "\<C-V>"))
         " Block mode is too difficult to handle at the moment
         silent exe "normal! d"
-        let putreg = getreg( '"' )
+        let putreg = getreg( '+' )
     else
         silent exe "normal! y"
         let putreg = getreg( '"' )
