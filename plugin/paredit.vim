@@ -333,7 +333,7 @@ endfunction
 
 " General delete operator handling
 function! PareditDelete( type, ... )
-    call PareditOpfunc( 'd', a:type, a:0 )
+    call PareditOpfunc( '_d', a:type, a:0 )
     if s:repeat > 1
         call feedkeys( (s:repeat-1) . "." )
     endif
